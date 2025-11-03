@@ -8,7 +8,7 @@ __version__ = re.findall(
 )[0]
 
 this_directory = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(this_directory, "readme.md"), encoding="utf-8") as f:
+with open(os.path.join(this_directory, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
@@ -37,6 +37,11 @@ setup(
     download_url="https://github.com/mdolab/openconcept",
     license="MIT License",
     packages=find_packages(include=["openconcept*"]),
+    package_data={
+        # engine deck data
+        "openconcept.propulsion.empirical_data": ["**/*.npy"],
+    },
+    include_package_data=True,
     install_requires=[
         # Update the oldest package versions in the GitHub Actions build file, the readme,
         # and the index.rst file in the docs when you change these
