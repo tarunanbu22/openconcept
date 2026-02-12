@@ -154,7 +154,6 @@ class BFLImplicitSolve(ImplicitComponent):
 
         self.speedtol = 1e-1
         self.disttol = 0.0
-        self.useOldCode = False
 
     def useVRes(self, vr, v1, dist_continue, dist_abort):
         """Determine whether to use the dist_continue - dist_abort or the vr - v1 residual.
