@@ -170,6 +170,11 @@ class BFLImplicitSolve(ImplicitComponent):
             engine-out takeoff distance
         dist_abort : float
             Rejected takeoff distance
+
+        Returns
+        -------
+        bool
+            True if the vr - v1 residual should be used, False if the dist_continue - dist_abort residual should be used.
         """
         return vr < v1 + self.speedtol and dist_abort < dist_continue + self.disttol
 
